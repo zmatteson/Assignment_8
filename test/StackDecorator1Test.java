@@ -28,15 +28,30 @@ public class StackDecorator1Test {
         System.setOut(new PrintStream(outContent));
     }
 
-    @AfterEach
-    public void teatDown() {
-        System.setOut(null);
-    }
-
     @Test
     @DisplayName("The stack decorator should print Push when pushing to the stack")
     public void printPush() {
         stack.Push(2);
         assertEquals("Push\n", outContent.toString());
     }
+    @Test
+    @DisplayName("The stack decorator should print Pop when Pop() is called")
+    public void printPop() {
+        stack.Pop();
+        assertEquals("Pop\n", outContent.toString());
+    }
+    @Test
+    @DisplayName("The stack decorator should print Top when Top() is called")
+    public void printTop() {
+        stack.Top();
+        assertEquals("Top\n", outContent.toString());
+    }
+    @Test
+    @DisplayName("The stack decorator should print Length when Length() is called")
+    public void printLength() {
+        stack.Length();
+        assertEquals("Length\n", outContent.toString());
+    }
+
+
 }
